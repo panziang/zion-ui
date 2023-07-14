@@ -11,6 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "lint-staged": "^13.2.3",
     "vue": "^3.3.4"
   },
   "devDependencies": {
@@ -22,12 +23,13 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.15.1",
+    "husky": "^8.0.3",
     "prettier": "^3.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vue-tsc": "^1.8.3"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,vue}": "eslint --cache --fix"
+    "*.{js,ts,tsx,vue}": "eslint --fix"
   }
 }
