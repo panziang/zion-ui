@@ -37,7 +37,7 @@ export default defineComponent({
       const span = count.value ? <span>A</span> : <span>B</span>
       return (
         <div onClick={withModifiers(inc, ['self'])}>
-          test{count.value}
+          test:{count.value}
           <input type="text" v-focus v-model={count.value} />
           <div>{span}</div>
           <ul>

@@ -2,6 +2,10 @@
 import HelloWorld from './components/HelloWorld.vue'
 import Test from './components/Test'
 import ZButton from './button/src/Button'
+
+const confirm = () => {
+  console.log('confirm')
+}
 </script>
 
 <template>
@@ -13,8 +17,12 @@ import ZButton from './button/src/Button'
         <h2>title</h2>
       </template>
     </Test>
-    <z-button type="primary"></z-button>
-    <ZButton>取消</ZButton>
+    <!-- <z-button type="primary" disabled @click="confirm"></z-button> -->
+    <z-button type="primary" size="small" block @click="confirm"></z-button>
+    <z-button type="primary" size="medium" disabled @click="confirm"></z-button>
+    <z-button type="primary" size="large"></z-button>
+
+    <!-- <ZButton>取消</ZButton> -->
   </div>
 </template>
 
