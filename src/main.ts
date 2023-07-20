@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './index.scss'
 
-// import Button from './button'
+import Button from './button'
 
 //使用全量导出
-import ZionUI from '../build'
-createApp(App).use(ZionUI).mount('#app')
+// import ZionUI from '../build'
+createApp(App).use(Button).mount('#app')
