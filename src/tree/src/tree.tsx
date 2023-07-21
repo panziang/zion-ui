@@ -1,51 +1,53 @@
-import { defineComponent, ref, toRefs } from 'vue'
+import { defineComponent, provide, ref, toRefs } from 'vue'
 import { TreeProps, treeProps } from './tree-type'
 import { useTree } from './composables/use-tree'
+import ZTreeNode from './components/tree-node'
+import ZTreeNodeToggle from './components/tree-node-toggle'
 
 export default defineComponent({
   name: 'ZTree',
   props: treeProps,
-  setup(props: TreeProps) {
+  setup(props: TreeProps, { slots }) {
     const { data } = toRefs(props)
     //从composable中获取数据和方法
-    const { expandedTree, toggleNode, getChildren } = useTree(data)
+    const treeData = useTree(data)
+    //向ZTreeNode提供数据和方法
+    provide('TREE_UTILS', {
+      toggleNode: treeData.toggleNode,
+      toggleCheckNode: treeData.toggleCheckNode,
+      getChildren: treeData.getChildren,
+      append: treeData.append,
+      remove: treeData.remove
+    })
+
     return () => {
       return (
         <div class="s-tree">
-          {expandedTree.value?.map(treeNode => (
-            //给树形结构根据level层级添加缩进
-            <div
-              class="s-tree-node"
-              style={{
-                paddingLeft: `${24 * (treeNode.level - 1)}px`
+          {/* 循环输出节点 */}
+          {treeData.expandedTree.value?.map(treeNode => (
+            // 将节点抽取为一个jsx
+            <ZTreeNode {...props} treeNode={treeNode}>
+              {{
+                // 当前节点的插槽
+                content: () =>
+                  slots.content ? slots.content(treeNode) : treeNode.label,
+                icon: () =>
+                  slots.icon ? (
+                    // 如果用户传了图标
+                    slots.icon({
+                      nodeData: treeNode,
+                      toggleNode: treeData.toggleNode
+                    })
+                  ) : (
+                    // 没传图标就是默认
+                    <ZTreeNodeToggle
+                      //!!转成boolean值
+                      expanded={!!treeNode.expanded}
+                      onClick={() => treeData.toggleNode(treeNode)}
+                    ></ZTreeNodeToggle>
+                  )
               }}
-            >
-              {/* 折叠图标 */}
-              {/* 判断当前节点是否为叶子节点 */}
-              {treeNode.isLeaf ? (
-                <span style={{ display: 'inline-block', width: '25px' }}></span>
-              ) : (
-                <svg
-                  // 控制是否折叠
-                  onClick={() => toggleNode(treeNode)}
-                  style={{
-                    width: '18px',
-                    height: '18px',
-                    display: 'inline-block',
-                    transform: treeNode.expanded ? 'rotate(90deg)' : ''
-                  }}
-                  viewBox="0 0 1024 1024"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M384 192v640l384-320.064z"
-                  ></path>
-                </svg>
-              )}
-              {/* 标签 */}
-              {treeNode.label}
-            </div>
+            </ZTreeNode>
           ))}
         </div>
       )

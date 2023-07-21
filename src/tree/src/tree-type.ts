@@ -24,6 +24,16 @@ export const treeProps = {
   data: {
     type: Object as PropType<Array<ITreeNode>>,
     required: true
+  },
+  //是否显示复选框
+  checkable: {
+    type: Boolean,
+    default: false
+  },
+  //是否显示操作按钮
+  operable: {
+    type: Boolean,
+    default: false
   }
 } as const
 export type TreeProps = ExtractPropTypes<typeof treeProps>
