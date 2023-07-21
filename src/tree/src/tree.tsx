@@ -12,13 +12,7 @@ export default defineComponent({
     //从composable中获取数据和方法
     const treeData = useTree(data)
     //向ZTreeNode提供数据和方法
-    provide('TREE_UTILS', {
-      toggleNode: treeData.toggleNode,
-      toggleCheckNode: treeData.toggleCheckNode,
-      getChildren: treeData.getChildren,
-      append: treeData.append,
-      remove: treeData.remove
-    })
+    provide('TREE_UTILS', treeData)
 
     return () => {
       return (

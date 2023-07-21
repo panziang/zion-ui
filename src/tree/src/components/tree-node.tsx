@@ -1,27 +1,25 @@
 import { defineComponent, inject, ref, toRefs } from 'vue'
 import { TreeNodeProps, treeNodeProps } from './tree-node-type'
 import { IInnerTreeNode } from '../tree-type'
+import { TreeUtils } from '../composables/use-tree-type'
 
 //节点宽高
 const NODE_HEIGHT = 28
 const NODE_INDENT = 24
-
-type TreeUtils = {
-  getChildren: (treeNode: IInnerTreeNode) => IInnerTreeNode[]
-  toggleNode: (treeNode: IInnerTreeNode) => void
-  toggleCheckNode: (treeNode: IInnerTreeNode) => void
-  append: (parent: IInnerTreeNode, node: IInnerTreeNode) => void
-  remove: (node: IInnerTreeNode) => void
-}
 
 export default defineComponent({
   name: 'ZTreeNode',
   props: treeNodeProps,
   setup(props: TreeNodeProps, { slots }) {
     const { treeNode, checkable, operable } = toRefs(props)
-    const { getChildren, toggleNode, toggleCheckNode, append, remove } = inject(
-      'TREE_UTILS'
-    ) as TreeUtils
+    const {
+      getChildren,
+      getChildrenExpanded,
+      toggleNode,
+      toggleCheckNode,
+      append,
+      remove
+    } = inject('TREE_UTILS') as TreeUtils
 
     const isShow = ref(false)
     //操作开关变量
@@ -48,7 +46,9 @@ export default defineComponent({
           <span
             class="s-tree-node__vline absolute w-px bg-gray-300"
             style={{
-              height: `${NODE_HEIGHT * getChildren(treeNode.value).length}px`,
+              height: `${
+                NODE_HEIGHT * getChildrenExpanded(treeNode.value).length
+              }px`,
               //当前节点的层级乘以设置的节点indent,稍微偏移一点
               left: `${NODE_INDENT * (treeNode.value.level - 1) + 8}px`,
               top: `${NODE_HEIGHT}px`
