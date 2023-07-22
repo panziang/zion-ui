@@ -1,14 +1,13 @@
-## 🌲 树
+# 🌲 树
+## 基础功能
+
 :::demo this is a tree
   ````vue
     <template>
       <ZTree :data="tree"></ZTree>
     </template>
-    <script>
-    export default {
-      data() {
-        return {
-          tree : [
+    <script setup>
+      let tree = [
         {
           label: 'docs',
           id: 'docs'
@@ -58,9 +57,6 @@
           id: 'pnpm-workspace.yaml'
         }
       ]
-      }
-    }
-  }
 
     </script>
   ````
@@ -174,11 +170,8 @@
         </template>
       </ZTree>
     </template>
-    <script>
-    export default {
-      data() {
-        return {
-      data:[
+    <script setup>
+      let data=[
         {
           label: 'docs',
           id: 'docs'
@@ -228,9 +221,6 @@
           id: 'pnpm-workspace.yaml'
         }
       ]
-        }
-      }
-    }
     </script>
   ```
 :::
