@@ -3,6 +3,7 @@ import { TreeProps, treeProps } from './tree-type'
 import { useTree } from './composables/use-tree'
 import ZTreeNode from './components/tree-node'
 import ZTreeNodeToggle from './components/tree-node-toggle'
+import '../style/tree.scss'
 
 export default defineComponent({
   name: 'ZTree',

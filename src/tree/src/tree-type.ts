@@ -1,4 +1,5 @@
 import { ExtractPropTypes, PropType } from 'vue'
+import { IDraggable } from './composables/use-tree-type'
 export interface ITreeNode {
   label: string
   id?: string
@@ -35,6 +36,11 @@ export const treeProps = {
   //是否显示操作按钮
   operable: {
     type: Boolean,
+    default: false
+  },
+  //拖拽树开关
+  draggable: {
+    type: [Boolean, Object] as PropType<IDraggable>,
     default: false
   }
 } as const

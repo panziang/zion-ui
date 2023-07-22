@@ -8,6 +8,7 @@ export type IUseCore = {
   getChildrenExpanded: (treeNode: IInnerTreeNode) => IInnerTreeNode[]
   getIndex: (node: IInnerTreeNode) => number
   getNode: (node: IInnerTreeNode) => IInnerTreeNode | undefined
+  getParent: (node: IInnerTreeNode) => IInnerTreeNode | undefined
 }
 
 //折叠
@@ -36,10 +37,33 @@ export type IUseLazyLoad = {
   lazyLoadNodes: (node: IInnerTreeNode) => void
 }
 
+//拖拽
+export type IDraggable = boolean | IDropType
+export interface IDropType {
+  dropPrev?: boolean
+  dropNext?: boolean
+  dropInner?: boolean
+}
+
+export interface IUseDraggable {
+  onDragstart: (event: DragEvent, treeNode: IInnerTreeNode) => void
+  onDragover: (event: DragEvent) => void
+  onDragleave: (event: DragEvent) => void
+  onDrop: (event: DragEvent, treeNode: IInnerTreeNode) => void
+  onDragend: (event: DragEvent) => void
+}
+
+export interface DragState {
+  dropType?: keyof Required<IDropType>
+  draggingNode?: HTMLElement | null
+  draggingTreeNode?: IInnerTreeNode | null
+}
+
 //原始数据
 export type TreeUtils = {
   treeData: Ref<IInnerTreeNode[]>
 } & IUseCore &
   IUseToggle &
   IUseCheck &
-  IUseOperate
+  IUseOperate &
+  IUseDraggable

@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import Test from './components/Test'
 import ZButton from './button/src/Button'
+import VirtualList from './components/VirtualList.vue'
 
 const confirm = () => {
   console.log('confirm')
@@ -11,6 +12,7 @@ const confirm = () => {
 <template>
   <div id="app">
     <HelloWorld />
+    <VirtualList></VirtualList>
     <Test>
       <template #default>qwe default</template>
       <template #title>
