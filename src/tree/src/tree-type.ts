@@ -42,6 +42,13 @@ export const treeProps = {
   draggable: {
     type: [Boolean, Object] as PropType<IDraggable>,
     default: false
+  },
+  height: {
+    type: Number
+  },
+  itemHeight: {
+    type: Number,
+    default: 30
   }
 } as const
 export type TreeProps = ExtractPropTypes<typeof treeProps>
