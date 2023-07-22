@@ -1,4 +1,4 @@
-# 🌲 树
+## 🌲 树
 :::demo this is a tree
   ````vue
     <template>
@@ -66,7 +66,7 @@
   ````
 :::
 
-# 勾选功能
+## 勾选功能
 :::demo 🌲 勾选功能
   ```vue
     <template>
@@ -141,7 +141,7 @@
 :::
 
 
-# 🌲 自定义图标以及 label
+## 🌲 自定义图标以及 label
 :::demo this is a tree
   ```vue
     <template>
@@ -235,7 +235,7 @@
   ```
 :::
 
-# 操作节点
+## 操作节点
 通过设置operable打开节点操作按钮。
 :::demo
 ```vue
@@ -273,3 +273,77 @@ export default defineComponent({
 ```
 :::
 
+
+## 节点懒加载
+通过设置该节点 isLeaf 参数为 false, 组件回调 lazyLoad 方法实现节点懒加载。
+:::demo 通过设置该节点 isLeaf 参数为 false, 组件回调 lazyLoad 方法实现节点懒加载。
+```vue
+<template>
+  <ZTree :data="data" @lazy-load="lazyLoad" />
+</template>
+<script>
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
+  setup() {
+    const data = ref([
+      {
+        id: 'node-1',
+        label: 'node-1',
+        children: [
+          {
+            id: 'node-1-1',
+            label: 'node 1-1 - dynamic loading',
+            isLeaf: false,
+          },
+          { 
+            id: 'node 1-2',
+            label: 'node 1-2',
+          },
+        ],
+      },
+      { 
+        id: 'node-2',
+        label: 'node 2 - dynamic loading',
+        isLeaf: false
+      },
+    ]);
+
+    const lazyLoad = (node, callback) => {
+      setTimeout(() => {
+        const data = [
+          {
+            label: 'lazy node 1',
+            expanded: true,
+            children: [
+              {
+                id: 'lazy node 1-1',
+                label: 'lazy node 1-1',
+              },
+              {
+                id: 'lazy node 1-2',
+                label: 'lazy node 1-2',
+              },
+            ],
+          },
+          {
+            id: 'lazy node 2',
+            label: 'lazy node 2',
+          },
+        ];
+        callback({
+          treeItems: data,
+          node,
+        });
+      }, 1000);
+    };
+
+    return {
+      data,
+      lazyLoad,
+    }
+  }
+})
+</script>
+```
+:::

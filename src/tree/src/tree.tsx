@@ -1,4 +1,4 @@
-import { defineComponent, provide, ref, toRefs } from 'vue'
+import { SetupContext, defineComponent, provide, ref, toRefs } from 'vue'
 import { TreeProps, treeProps } from './tree-type'
 import { useTree } from './composables/use-tree'
 import ZTreeNode from './components/tree-node'
@@ -7,10 +7,12 @@ import ZTreeNodeToggle from './components/tree-node-toggle'
 export default defineComponent({
   name: 'ZTree',
   props: treeProps,
-  setup(props: TreeProps, { slots }) {
+  emits: ['lazy-load'],
+  setup(props: TreeProps, context: SetupContext) {
     const { data } = toRefs(props)
+    const { slots } = context
     //从composable中获取数据和方法
-    const treeData = useTree(data)
+    const treeData = useTree(data.value, props, context)
     //向ZTreeNode提供数据和方法
     provide('TREE_UTILS', treeData)
 
@@ -39,6 +41,12 @@ export default defineComponent({
                       expanded={!!treeNode.expanded}
                       onClick={() => treeData.toggleNode(treeNode)}
                     ></ZTreeNodeToggle>
+                  ),
+                loading: () =>
+                  slots.loadind ? (
+                    slots.loading({ nodeData: treeData })
+                  ) : (
+                    <span class="ml-1">loading...</span>
                   )
               }}
             </ZTreeNode>

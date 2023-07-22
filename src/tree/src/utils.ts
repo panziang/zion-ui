@@ -38,7 +38,11 @@ export function generateInnerTree(
       return prev.concat(o, children)
     } else {
       //叶子节点
-      o.isLeaf = true
+      // 如果是懒加载，isLeaf会设置为false
+      //没有初始化则默认设置为true
+      if (o.isLeaf === undefined) {
+        o.isLeaf = true
+      }
       return prev.concat(o)
     }
   }, [] as IInnerTreeNode[])

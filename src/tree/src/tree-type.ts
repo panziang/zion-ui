@@ -18,6 +18,8 @@ export interface IInnerTreeNode extends ITreeNode {
   parentId?: string // 父节点ID
   level: number // 父节点层级
   isLeaf?: boolean // 是否叶子节点
+  loading?: boolean //是否显示加载
+  childNodeCount?: number // 该节点子节点的数量
 }
 
 export const treeProps = {
