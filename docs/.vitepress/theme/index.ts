@@ -1,11 +1,9 @@
 import Theme from 'vitepress/theme'
 import '../../../src/index.scss'
-import HelloWorld from '../../../src/components/HelloWorld.vue'
-import Test from '../../../src/components/Test'
-import Tree from '../../../src/tree/src/tree'
-import Button from '../../../src/button/src/Button'
-import Pagination from '../../../src/pagination/src/pagination'
-import Pager from '../../../src/pagination/src/components/pager'
+
+// import Pager from '../../../src/pagination/src/components/pager'
+
+import ZionUI from '../../../scripts/entry'
 
 // 主题样式
 // import 'vitepress-theme-demoblock/theme/styles/index.css'
@@ -22,13 +20,10 @@ export default {
   enhanceApp({ app }) {
     //注册组件
     //SFC组件
-    app.component('HelloWorld', HelloWorld)
+    app.use(ZionUI)
     //JSX组件
-    app.component('Test', Test)
-    app.component('ZButton', Button)
-    app.component('ZTree', Tree)
-    app.component('ZPagination', Pagination)
-    app.component('ZPager', Pager)
+
+    // app.component('ZPager', Pager)
 
     app.component('Demo', Demo)
     app.component('DemoBlock', DemoBlock)

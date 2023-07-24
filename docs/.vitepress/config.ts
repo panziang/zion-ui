@@ -14,7 +14,10 @@ const sidebar = {
     { text: '反馈', items: [] },
     {
       text: '数据录入',
-      items: [{ text: 'Input 输入框', link: '/components/input/' }]
+      items: [
+        { text: 'Input 输入框', link: '/components/input/' },
+        { text: 'Form 表单', link: '/components/form/' }
+      ]
     },
     {
       text: '数据展示',
