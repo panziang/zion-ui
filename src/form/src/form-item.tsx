@@ -3,6 +3,8 @@ import {
   computed,
   defineComponent,
   inject,
+  onMounted,
+  onUnmounted,
   provide,
   ref,
   toRefs
@@ -80,9 +82,23 @@ export default defineComponent({
         }
       })
     }
-    //提供方法给input
-    provide('FORM_ITEM_CTX', {
+    const formItemCtx = {
       validate
+    }
+    //提供方法给input
+    provide('FORM_ITEM_CTX', formItemCtx)
+
+    //挂载后注册到formCtx中
+    onMounted(() => {
+      if (props.prop) {
+        formCtx?.addItem(formItemCtx)
+      }
+    })
+
+    onUnmounted(() => {
+      if (props.prop) {
+        formCtx?.removeItem(formItemCtx)
+      }
     })
     return () => {
       return (
