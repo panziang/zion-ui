@@ -1,16 +1,12 @@
 import Theme from 'vitepress/theme'
 import '../../../src/index.scss'
 
-// import Pager from '../../../src/pagination/src/components/pager'
-
 import ZionUI from '../../../scripts/entry'
 
 // 主题样式
 // import 'vitepress-theme-demoblock/theme/styles/index.css'
 // 插件的组件，主要是demo组件
 
-// import DemoBlock from 'vitepress-theme-demoblock/components/DemoBlock.vue'
-// import Demo from 'vitepress-theme-demoblock/components/Demo.vue'
 import Demo from 'vitepress-theme-demoblock/components/Demo.vue'
 import DemoBlock from 'vitepress-theme-demoblock/components/DemoBlock.vue'
 

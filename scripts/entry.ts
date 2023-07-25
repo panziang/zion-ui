@@ -5,12 +5,19 @@ import ButtonPlugin, { Button } from '../src/button'
 import TreePlugin, { Tree } from '../src/tree'
 import PaginationPlugin, { Pagination } from '../src/pagination'
 import FormPlugin, { Form } from '../src/form'
+import InputPlugin, { Input } from '../src/input'
 
 //导出组件
-export { Button, Tree, Pagination, Form }
+export { Button, Tree, Pagination, Form, Input }
 
 //插件列表
-const installs = [ButtonPlugin, TreePlugin, PaginationPlugin, FormPlugin]
+const installs = [
+  ButtonPlugin,
+  TreePlugin,
+  PaginationPlugin,
+  FormPlugin,
+  InputPlugin
+]
 //导出插件
 export default {
   install(app: App): void {
