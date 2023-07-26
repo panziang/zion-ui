@@ -8,9 +8,10 @@ import FormPlugin, { Form } from '../src/form'
 import InputPlugin, { Input } from '../src/input'
 import ModalPlugin, { Modal } from '../src/modal'
 import IconPlugin, { Icon } from '../src/icon'
+import TabsPlugin, { Tabs, Tab } from '../src/tabs'
 
 //导出组件
-export { Button, Tree, Pagination, Form, Input, Modal, Icon }
+export { Button, Tree, Pagination, Form, Input, Modal, Icon, Tabs, Tab }
 
 //插件列表
 const installs = [
@@ -20,7 +21,8 @@ const installs = [
   FormPlugin,
   InputPlugin,
   ModalPlugin,
-  IconPlugin
+  IconPlugin,
+  TabsPlugin
 ]
 //导出插件
 export default {
