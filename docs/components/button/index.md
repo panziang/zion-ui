@@ -1,6 +1,6 @@
 # 按钮 -Button
 
-:::demo 这是HelloWorld组件
+:::demo 这是Button组件
 
 ``` vue
 

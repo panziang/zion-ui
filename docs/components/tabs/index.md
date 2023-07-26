@@ -2,7 +2,7 @@
 
 ## 基础用法
 
-z-tabs包裹若干s-tab即可，设置`v-model`控制激活页签id
+z-tabs包裹若干z-tab即可，设置`v-model`控制激活页签id
 :::demo
 ```vue
 <template>
