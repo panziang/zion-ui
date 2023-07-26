@@ -41,9 +41,9 @@ export default defineComponent({
             class="s-modal__container"
             style={{
               width: width.value,
-              ...alignCenterStyle,
               backgroundColor: backgroundColor.value,
-              marginTop: modalTop.value
+              marginTop: modalTop.value,
+              ...alignCenterStyle
             }}
           >
             {/* 标题区 */}
