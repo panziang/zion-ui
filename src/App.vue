@@ -47,7 +47,9 @@ const open = () => {
 
     <!-- <ZButton>取消</ZButton> -->
     <button ref="host" @click="open">host</button>
-    <ZPopover v-model="visible" :host="host" title="qwer">123</ZPopover>
+    <ZPopover v-model="visible" :host="host" title="qwer" show-arrow
+      >123</ZPopover
+    >
   </div>
 </template>
 

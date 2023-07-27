@@ -9,9 +9,21 @@ import InputPlugin, { Input } from '../src/input'
 import ModalPlugin, { Modal } from '../src/modal'
 import IconPlugin, { Icon } from '../src/icon'
 import TabsPlugin, { Tabs, Tab } from '../src/tabs'
+import PopoverPlugin, { Popover } from '../src/popover'
 
 //导出组件
-export { Button, Tree, Pagination, Form, Input, Modal, Icon, Tabs, Tab }
+export {
+  Button,
+  Tree,
+  Pagination,
+  Form,
+  Input,
+  Modal,
+  Icon,
+  Tabs,
+  Tab,
+  Popover
+}
 
 //插件列表
 const installs = [
@@ -22,7 +34,8 @@ const installs = [
   InputPlugin,
   ModalPlugin,
   IconPlugin,
-  TabsPlugin
+  TabsPlugin,
+  PopoverPlugin
 ]
 //导出插件
 export default {

@@ -1,4 +1,5 @@
 import { ExtractPropTypes, PropType } from 'vue'
+import { Placement } from '@floating-ui/dom'
 
 export const popoverProps = {
   modelValue: {

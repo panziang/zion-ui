@@ -5,7 +5,7 @@
 ``` vue
 
 
-  <ZButton size="large">qwe</ZButton>
+  <z-button size="large">qwe</z-button>
   <ZButton size="small">qwe</ZButton>
   <ZButton :size="res">qwe</ZButton>
 

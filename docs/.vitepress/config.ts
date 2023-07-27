@@ -19,7 +19,10 @@ const sidebar = {
     },
     {
       text: '反馈',
-      items: [{ text: 'Modal 对话框', link: '/components/modal/' }]
+      items: [
+        { text: 'Modal 对话框', link: '/components/modal/' },
+        { text: 'Popover 气泡卡片', link: '/components/popover/' }
+      ]
     },
     {
       text: '数据录入',
