@@ -3,18 +3,24 @@ import HelloWorld from './components/HelloWorld.vue'
 import Test from './components/Test'
 import ZBaseModal from './base-modal/src/base-modal'
 import VirtualList from './components/VirtualList.vue'
+import ZPopover from './popover/src/popover'
 import { ref } from 'vue'
 
-const modalVisible = ref(false)
+// const modalVisible = ref(false)
+// const open = () => {
+//   modalVisible.value = true
+// }
+const visible = ref(false)
+const host = ref()
 const open = () => {
-  modalVisible.value = true
+  visible.value = !visible.value
 }
 </script>
 
 <template>
   <div id="app">
-    <HelloWorld />
-    <VirtualList></VirtualList>
+    <!-- <HelloWorld />
+    <VirtualList></VirtualList> -->
     <!-- <Test>
       <template #default>qwe default</template>
       <template #title>
@@ -25,7 +31,7 @@ const open = () => {
     <!-- <z-button type="primary" size="small" block @click="confirm"></z-button>
     <z-button type="primary" size="medium" disabled @click="confirm"></z-button>
     <z-button type="primary" size="large"></z-button> -->
-    <button @click="open">打开</button>
+    <!-- <button @click="open">打开</button>
     <ZBaseModal v-model="modalVisible">
       <div
         style="
@@ -37,9 +43,11 @@ const open = () => {
       >
         <img src="./assets/sheep.webp" />
       </div>
-    </ZBaseModal>
+    </ZBaseModal> -->
 
     <!-- <ZButton>取消</ZButton> -->
+    <button ref="host" @click="open">host</button>
+    <ZPopover v-model="visible" :host="host" title="qwer">123</ZPopover>
   </div>
 </template>
 
