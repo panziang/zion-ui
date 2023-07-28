@@ -10,6 +10,7 @@ import ModalPlugin, { Modal } from '../src/modal'
 import IconPlugin, { Icon } from '../src/icon'
 import TabsPlugin, { Tabs, Tab } from '../src/tabs'
 import PopoverPlugin, { Popover } from '../src/popover'
+import TablePlugin, { Table, Column } from '../src/table'
 
 //导出组件
 export {
@@ -22,7 +23,9 @@ export {
   Icon,
   Tabs,
   Tab,
-  Popover
+  Popover,
+  Table,
+  Column
 }
 
 //插件列表
@@ -35,7 +38,8 @@ const installs = [
   ModalPlugin,
   IconPlugin,
   TabsPlugin,
-  PopoverPlugin
+  PopoverPlugin,
+  TablePlugin
 ]
 //导出插件
 export default {

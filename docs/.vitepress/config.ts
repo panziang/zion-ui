@@ -33,7 +33,10 @@ const sidebar = {
     },
     {
       text: '数据展示',
-      items: [{ text: 'Tree 树', link: '/components/tree/' }]
+      items: [
+        { text: 'Tree 树', link: '/components/tree/' },
+        { text: 'Table 表格', link: '/components/table/' }
+      ]
     },
     {
       text: '布局',
