@@ -13,7 +13,8 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "test": "vitest",
-    "build:components": "node ./scripts/build.js"
+    "build:components": "node ./scripts/build.js",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@commitlint/cli": "17.0.2",
