@@ -2,33 +2,55 @@
 
 
 <p align="center">
-<a href="https://github.com/panziang/zion-ui/blob/main/.github/workflows/main.yml"><img src="https://github.com/panziang/zion-ui/blob/main/.github/workflows/main.yml/badge.svg?branch=main" alt="CI" style="max-width: 100%;"></a>
-
- [![codecov](https://codecov.io/gh/panziang/zion-ui/branch/main/graph/badge.svg?token=q8LjB1kVVr)](https://codecov.io/gh/panziang/zion-ui)
-![GitHub](https://img.shields.io/github/license/panziang/zion-ui)
+<img src="https://img.shields.io/npm/v/zion-ui-vite?color=c95f8b&amp;label=" alt="NPM version">
+<a href="https://github.com/panziang/zion-ui/actions/workflows/main.yml"><img src="https://github.com/panziang/zion-ui/actions/workflows/main.yml/badge.svg?branch=main" alt="CI" style="max-width: 100%;"></a>
+<img src="https://img.shields.io/github/license/panziang/zion-ui"/>
+<img src="https://img.shields.io/codecov/c/github/panziang/zion-ui"/>
 </p>
 
-✨ Features
-🪐 10+ common components
-💪 Developed with the latest features of Vue.js
-🐆 Fully based on Vite, fast enough
-🤟 Ultimate development experience
-🥇 Ultra detailed JSDoc comments
-🪐 Different packaging modes which compatible with different projects
-🏆 Support full import and on-demand import
-✅ Written with TypeScript & Template
-🖍️ Strict TypeScript Type
-✔️ Easy to configure and easy to use
-🚩 Complete and adequate unit tests
-👍 Maintained by the community team
-❤️ Developed according to actual demand
-📃 High quality detailed documentation
-📌 Improve RFC
-☝️ Put forward demands and keep improving
-🌍 More configuration options & flexible components
-🛠 More features are under development
-🔑 Install
-Use pnpm install
+## Features
 
-`pnpm add --save-dev zion-ui-vite`
+- ⚡️ Vue 3, Vite 3, pnpm, ESBuild - born with fastness
+- 🦾 TypeScript, of course
+- 🗂 File based routing
+- ⚙️ Unit Testing with Vitest
+- 😃 Eslint + Prettier
+- 🎨 UnoCSS - the instant on-demand atomic CSS engine
+- 🌍 I18n ready
+- 🚘 CI/CD with GithubActions
 
+
+## Install
+
+```bash
+npm i zion-ui-vite
+```
+
+## Quick Start
+
+```js
+import Vue from 'vue'
+import ZionUI from 'zion-ui-vite'
+
+const App = {
+    template: `
+        <ZButton/>
+    `,
+};
+
+createApp(App)
+    .use(ZionUI)
+    .mount("#app");
+```
+
+## Browser Support
+
+Modern browsers and Internet Explorer 10+.
+
+
+## LICENSE
+
+[MIT](LICENSE)
+
+
+Copyright (c) 2023 - present Ziang(Zion) Pan
