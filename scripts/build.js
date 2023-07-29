@@ -92,8 +92,8 @@ const buildAll = async () => {
         rollupOptions,
         lib: {
           entry: entryFile,
-          name: 'zion-ui',
-          fileName: 'zion-ui',
+          name: 'zion-ui-vite',
+          fileName: 'zion-ui-vite',
           formats: ['es', 'umd']
         },
         outDir: outputDir
