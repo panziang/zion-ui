@@ -1,6 +1,11 @@
 import { computed, defineComponent, toRefs } from 'vue'
 import { IconProps, iconProps } from './icon-type'
 
+import '../style/icon.scss'
+
+// 引入字体图标css
+// import '../style/iconfont.js'
+
 export default defineComponent({
   name: 'ZIcon',
   props: iconProps,

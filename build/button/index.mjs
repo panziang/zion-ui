@@ -17,7 +17,7 @@ const f = {
     type: Boolean,
     default: !1
   }
-}, n = /* @__PURE__ */ c({
+}, n = c({
   name: "ZButton",
   props: f,
   setup(e, {

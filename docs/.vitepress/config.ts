@@ -48,18 +48,9 @@ const sidebar = {
 export default defineConfig({
   themeConfig: {
     sidebar,
-    nav: [
-      { text: '向导', link: '/guide' },
-      {
-        text: '课程',
-        items: [
-          { text: 'Vue3组件库开发实战', link: '/course/vue3-comps' },
-          { text: 'Vue3源码全家桶', link: '/course/vue-source' }
-        ]
-      }
-    ],
+    nav: [],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/57code/sheep-ui' }
+      { icon: 'github', link: 'https://github.com/panziang/zion-ui' }
     ]
   },
   markdown: {

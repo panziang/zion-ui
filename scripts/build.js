@@ -25,6 +25,7 @@ const rollupOptions = {
   // 外置
   external: ['vue', 'vue-router'],
   output: {
+    exports: 'named',
     globals: {
       vue: 'Vue'
     }
@@ -40,16 +41,7 @@ const createPackageJson = name => {
     "main": "${name ? 'index.umd.js' : 'zion-ui.umd.js'}",
     "module": "${name ? 'index.umd.js' : 'zion-ui.mjs'}",
     "author": "duck不必",
-    "description": "一个从0到1构建的组件库",
-    "repository": {
-      "type": "git", 
-      "url": "git+https://github.com/panziang/zion-ui.git"
-    },
-    "keywords": ["vue3", "组件库", "tsx", "UI"],
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/panziang/zion-ui/issues"
-    }
+    "description": "一个从0到1构建的组件库"
   }`
 
   if (name) {

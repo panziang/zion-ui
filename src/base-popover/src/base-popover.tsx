@@ -80,30 +80,32 @@ export default defineComponent({
     const mutationObserver = new MutationObserver(() => updatePosition())
 
     //watch监控modelValue的变化，改变了就重新定位
-    watch(
-      modelValue,
-      newValue => {
-        //newValue为true时，overlay需要显示
-        if (newValue) {
-          nextTick(updatePosition)
+    onMounted(() => {
+      watch(
+        modelValue,
+        newValue => {
+          //newValue为true时，overlay需要显示
+          if (newValue) {
+            nextTick(updatePosition)
 
-          //监听两个事件和宿主元素尺寸、定位的变化
-          hostRef.value &&
-            mutationObserver.observe(hostRef.value, { attributes: true })
+            //监听两个事件和宿主元素尺寸、定位的变化
+            hostRef.value &&
+              mutationObserver.observe(hostRef.value, { attributes: true })
 
-          //监听滚动事件和尺寸改变
-          window.addEventListener('resize', updatePosition)
-          window.addEventListener('scroll', updatePosition)
-        } else {
-          //释放监听
-          mutationObserver.disconnect()
-          window.removeEventListener('resize', updatePosition)
-          window.removeEventListener('scroll', updatePosition)
-        }
-      },
-      //第一次就监听
-      { immediate: true }
-    )
+            //监听滚动事件和尺寸改变
+            window.addEventListener('resize', updatePosition)
+            window.addEventListener('scroll', updatePosition)
+          } else {
+            //释放监听
+            mutationObserver.disconnect()
+            window.removeEventListener('resize', updatePosition)
+            window.removeEventListener('scroll', updatePosition)
+          }
+        },
+        //第一次就监听
+        { immediate: true }
+      )
+    })
 
     //销毁事件
     onUnmounted(() => {
