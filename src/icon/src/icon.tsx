@@ -1,4 +1,4 @@
-import { computed, defineComponent, toRefs } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { IconProps, iconProps } from './icon-type'
 
 import '../style/icon.scss'

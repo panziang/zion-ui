@@ -54,7 +54,7 @@ export default defineComponent({
                             ),
                           loading: () =>
                             slots.loadind ? (
-                              slots.loading({ nodeData: treeData })
+                              slots.loading!({ nodeData: treeData })
                             ) : (
                               <span class="ml-1">loading...</span>
                             )

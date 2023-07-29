@@ -40,7 +40,7 @@ export default defineComponent({
     }
     return () => {
       return (
-        <Component.value
+        <div
           class="s-virtual-list__container"
           ref={containerRef}
           onScroll={scrollEvent}
@@ -63,7 +63,7 @@ export default defineComponent({
               (item, index) => slots.default?.({ item, index })
             )}
           </div>
-        </Component.value>
+        </div>
       )
     }
   }

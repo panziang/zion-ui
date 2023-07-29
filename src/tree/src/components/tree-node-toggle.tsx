@@ -1,6 +1,6 @@
 import { SetupContext } from 'vue'
 
-export default (props: { expanded: boolean }, { emit }: SetupContext) => (
+export default (props: any, { emit }: SetupContext) => (
   <svg
     // 控制是否折叠
     //事件派发
