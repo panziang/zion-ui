@@ -137,8 +137,11 @@
 :::
 
 
-## 🌲 自定义图标以及 label
-:::demo this is a tree
+## 自定义 icon 图标
+
+通过 icon 插槽可以自定义展开/折叠图标。 
+:::demo 自定义展开图标，设置 icon 插槽
+
 ```vue
 <template>
   <z-tree :data="data">
@@ -147,8 +150,9 @@
       <span
         v-else
         @click="
-            event => {
-              toggleNode(event,nodeData)
+          event => {
+            event.stopPropagation()
+            toggleNode(nodeData)
           }
         "
       >
@@ -225,6 +229,7 @@
   ])
 </script>
 ```
+
 :::
 
 ## 操作节点
