@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': ['off'],
     '@typescript-eslint/no-unused-vars': ['off'],
     '@typescript-eslint/no-explicit-any': ['off'],
-    '@typescript-eslint/no-this-alias': 0
+    '@typescript-eslint/no-this-alias': 0,
+    'vue/no-setup-props-destructure': ['off']
   }
 }
