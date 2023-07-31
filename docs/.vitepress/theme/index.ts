@@ -10,6 +10,9 @@ import ZionUI from '../../../scripts/entry'
 import Demo from 'vitepress-theme-demoblock/components/Demo.vue'
 import DemoBlock from 'vitepress-theme-demoblock/components/DemoBlock.vue'
 
+// 引入字体图标css
+import './iconfont.css'
+// import './iconfont.js'
 export default {
   ...Theme,
   //扩展应用程序实例
@@ -23,5 +26,11 @@ export default {
 
     app.component('Demo', Demo)
     app.component('DemoBlock', DemoBlock)
+
+    // app.mixin({
+    //   async mounted() {
+    //     import('./iconfont.js').then(module => {})
+    //   }
+    // })
   }
 }
