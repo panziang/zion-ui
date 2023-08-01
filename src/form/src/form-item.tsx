@@ -49,8 +49,9 @@ export default defineComponent({
       }
       //每个form-item的校验绑定项prop
       if (!props.prop) {
-        console.warn('如果要校验当前项,请设置prop字段')
-        return Promise.reject('如果要校验当前项,请设置prop字段')
+        // console.warn('如果要校验当前项,请设置prop字段')
+        // return Promise.reject('如果要校验当前项,请设置prop字段')
+        return Promise.resolve({ result: true })
       }
       //不需要校验
       if (!formCtx.rules) {

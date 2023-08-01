@@ -8,7 +8,7 @@
 ```vue
 <template>
   <z-form :model="model" layout="horizontal">
-    <z-form-item label="用户名">
+    <z-form-item label="用户名" prop="model.user">
       <z-input v-model="model.user"/>
     </z-form-item>
   </z-form>
