@@ -1,6 +1,11 @@
 import { ExtractPropTypes, PropType } from 'vue'
 
-export type IButtonType = 'primary' | 'secondary' | 'text'
+export type IButtonType =
+  | 'primary'
+  | 'secondary'
+  | 'text'
+  | 'success'
+  | 'danger'
 export type IButtonSize = 'large' | 'medium' | 'small'
 
 export const buttonProps = {

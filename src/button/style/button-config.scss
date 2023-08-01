@@ -15,7 +15,17 @@ $type: (
   text: (
     padding: 0,
     color: $s-brand-active
-  )
+  ),
+  success: (
+    color: $s-light-text,
+    background-color: $s-success,
+    border-color: $s-success
+  ),
+  danger: (
+    color: $s-light-text,
+    background-color: $s-danger,
+    border-color: $s-danger
+  ),
 );
 
 // 伪类的配置
@@ -68,7 +78,39 @@ $pseudo: (
     disabled: (
       color: $s-disabled-text
     )
-  )
+  ),
+  success: (
+    hover: (
+      background-color: $s-success-hover
+    ),
+    focus: (
+      background-color: $s-success-hover
+    ),
+    active: (
+      background-color: $s-success-active
+    ),
+    disabled: (
+      color: $s-light-text,
+      background-color: $s-success-disabled,
+      border: none
+    )
+  ),
+  danger: (
+    hover: (
+      background-color: $s-danger-hover
+    ),
+    focus: (
+      background-color: $s-danger-hover
+    ),
+    active: (
+      background-color: $s-danger-active
+    ),
+    disabled: (
+      color: $s-light-text,
+      background-color: $s-danger-disabled,
+      border: none
+    )
+  ),
 );
 
 // 按钮尺寸

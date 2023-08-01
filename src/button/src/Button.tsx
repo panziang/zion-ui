@@ -13,7 +13,7 @@ export default defineComponent({
       return (
         <button
           disabled={disabled.value}
-          class={`s-btn s-btn--${type.value} s-btn--${size.value} ${blockCls}`}
+          class={`s-btn s-btn--${type.value} s-btn--${size.value} ${blockCls} `}
         >
           {defaultSlots}
         </button>

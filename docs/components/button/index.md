@@ -6,7 +6,12 @@
 
 ```vue
 <template>
-  <z-button></z-button>
+  <z-button type="secondary"></z-button>
+  <z-button type="primary"></z-button>
+  <z-button type="success"></z-button>
+  <z-button type="danger"></z-button>
+
+
 </template>
 ```
 
@@ -18,7 +23,7 @@
 
 ```vue
 <template>
-  <z-button color="red"></z-button>
+  <z-button type="secondary"></z-button>
   <z-button type="primary"></z-button>
   <z-button type="text"></z-button>
 </template>
@@ -48,6 +53,11 @@
       @click="confirm">Primary</z-button>
     <z-button type="primary" disabled 
       @click="confirm">Disabled</z-button>
+      <z-button disabled/>
+      <z-button type="success" disabled/>
+      <z-button type="danger" disabled/>
+      <z-button type="text" disabled/>
+
 </template>
 <script setup>
   const confirm = () => console.log('confirm')
