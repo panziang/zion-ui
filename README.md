@@ -8,44 +8,38 @@
 <img src="https://img.shields.io/codecov/c/github/panziang/zion-ui"/>
 </p>
 
-## Features
+## 特性
 
-- ⚡️ Vue 3, Vite 3, pnpm, ESBuild - born with fastness
-- 🦾 TypeScript, of course
-- 🗂 File based routing
-- ⚙️ Unit Testing with Vitest
-- 😃 Eslint + Prettier
-- 🎨 UnoCSS - the instant on-demand atomic CSS engine
-- 🌍 I18n ready
-- 🚘 CI/CD with GithubActions
+- 🪐 10+ 常用组件
+- 💪 使用 Vue.js 最新特性开发
+- 🐆 全面基于 Vite，速度够快
+- 🤟 极致的开发体验
+- 🥇 超详细的 JSDoc 注释
+- ✂️ 完善的代码提示
+- 🪐 不同打包模式，兼容不同项目
 
 
-## Install
+## 安装
 
 ```bash
 npm i zion-ui-vite
 ```
 
-## Quick Start
+## 快速开始
 
 ```js
 import Vue from 'vue'
 import ZionUI from 'zion-ui-vite'
-
-const App = {
-    template: `
-        <ZButton/>
-    `,
-};
+import "zion-ui-vite/style.css";
 
 createApp(App)
     .use(ZionUI)
     .mount("#app");
 ```
 
-## Browser Support
+## 游览器兼容
 
-Modern browsers and Internet Explorer 10+.
+现代浏览器和Internet Explorer 10+
 
 
 ## LICENSE

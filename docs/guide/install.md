@@ -11,12 +11,7 @@ npm i zion-ui-vite
 ```js
 import Vue from 'vue'
 import ZionUI from 'zion-ui-vite'
-
-const App = {
-    template: `
-        <ZButton/>
-    `,
-};
+import "zion-ui-vite/style.css";
 
 createApp(App)
     .use(ZionUI)
