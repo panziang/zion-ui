@@ -1,6 +1,6 @@
 {
   "name": "zion-ui-vite",
-  "private": true,
+  "private": false,
   "version": "0.1.1",
   "type": "commonjs",
   "scripts": {
