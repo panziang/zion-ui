@@ -42,17 +42,23 @@
 ```
 :::
 
-<!-- ## svg 图标
+## svg 图标
 设置component可以显示svg图标。
 :::demo component设置为symbolId即可
 ```vue
-<script src="../../.vitepress/theme/iconfont.js"></script>
 <template>
   <z-icon component="vuejs" size="30px" color="green" />
   <z-icon component="react" :size="30" color="blue" />
   <z-icon component="angular" :size="30" color="red" />
 
 </template>
+<script>
+export default {
+  mounted () {
+    import('../../.vitepress/theme/iconfont.js').then(icon => {})
+  }
+}
+</script>
 
 ```
-::: -->
+:::

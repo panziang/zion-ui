@@ -4,7 +4,7 @@ import { IconProps, iconProps } from './icon-type'
 import '../style/icon.scss'
 
 // 引入字体图标css
-// import '../style/iconfont'
+import '../style/icon.scss'
 
 export default defineComponent({
   name: 'ZIcon',

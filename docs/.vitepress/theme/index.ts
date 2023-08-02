@@ -26,11 +26,8 @@ export default {
 
     app.component('Demo', Demo)
     app.component('DemoBlock', DemoBlock)
-
-    // app.mixin({
-    //   async mounted() {
-    //     import('./iconfont.js').then(module => {})
-    //   }
-    // })
   }
+  // mounted() {
+  //   import('./iconfont.js')
+  // }
 }
