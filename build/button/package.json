@@ -1,8 +1,0 @@
-{
-    "name": "button",
-    "version": "0.0.0",
-    "main": "index.umd.js",
-    "module": "index.umd.js",
-    "author": "duck不必",
-    "description": "一个从0到1构建的组件库"
-  }

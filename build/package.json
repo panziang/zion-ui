@@ -1,8 +1,0 @@
-{
-  "name": "zion-ui-vite",
-  "version": "0.1.1",
-  "main": "zion-ui.umd.js",
-  "module": "zion-ui.mjs",
-  "author": "duck不必",
-  "description": "一个从0到1构建的组件库"
-}
