@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "121435693",
+      "name": "vue",
+      "font_class": "vue",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "11992170",
+      "name": "angular",
+      "font_class": "angular",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "11993629",
+      "name": "vuejs",
+      "font_class": "vuejs",
+      "unicode": "e7d1",
+      "unicode_decimal": 59345
+    },
+    {
+      "icon_id": "15188548",
+      "name": "react",
+      "font_class": "react",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    }
+  ]
+}
