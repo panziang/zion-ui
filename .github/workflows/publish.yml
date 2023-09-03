@@ -3,7 +3,7 @@ name: Publish To Npm
 on:
   pull_request:
     branches:
-      - publish
+      - publish-zion-ui
     types:
       - closed
 jobs:
