@@ -1,11 +1,8 @@
 name: Publish To Npm
 
 on:
-  pull_request:
-    branches:
-      - publish-zion-ui
-    types:
-      - closed
+  push:
+    branches: [publish-zion-ui]
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -27,8 +24,5 @@ jobs:
         # uses: primer/publish@3.0.0
         uses: JS-DevTools/npm-publish@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.NPM_AUTH_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
-        # with:
-        #   default_branch: "publish"
-        #   dir: "packages/pza-ui-vite"
+          package: packages/zion-ui-vite
