@@ -1,11 +1,8 @@
 name: Publish To Npm
 
 on:
-  pull_request:
-    branches:
-      - publish-zion-ui
-    types:
-      - closed
+  push:
+    branches: [publish-zion-ui]
 jobs:
   publish:
     runs-on: ubuntu-latest
