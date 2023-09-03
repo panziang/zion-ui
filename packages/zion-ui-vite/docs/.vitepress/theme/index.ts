@@ -22,8 +22,6 @@ export default {
     app.use(ZionUI)
     //JSX组件
 
-    // app.component('ZPager', Pager)
-
     app.component('Demo', Demo)
     app.component('DemoBlock', DemoBlock)
   }
