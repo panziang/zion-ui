@@ -24,5 +24,4 @@ jobs:
         # uses: primer/publish@3.0.0
         uses: JS-DevTools/npm-publish@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.NPM_AUTH_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
